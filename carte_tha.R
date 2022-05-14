@@ -18,14 +18,13 @@ for (i in seq_len(nrow(df_dl))) {
 names(bndr) <- paste0(df_dl$iso, df_dl$lvl)
 
 # write province names
+# NB this table was manually edited... ==> "tha_provinces_zones.csv"
 write.csv(
   as.data.frame(sf::st_drop_geometry(bndr$THA1)[c("NAME_1", "HASC_1")]),
   "tha_provinces.csv"
 )
-# [...] manually edited...
-dt_zn <- read.csv("tha_provinces_zones.csv")
 
-# zones / regions
+# zone-region relationships
 dt_rg <- data.frame(
   Region = c(
     rep("Central", 4),
@@ -35,19 +34,31 @@ dt_rg <- data.frame(
   ),
   Zone = c(0, 4:6, 1:3, 7:10, 11:12)
 )
+#
+dt_pro <-  read.csv("tha_provinces_zones.csv") %>%
+  inner_join(dt_rg) %>%
+  select(NAME_1, Zone, Region, ID_BC)
+# provinces
+pro <- bndr$THA1
+pro$id <- seq_len(nrow(bndr$THA1))
+pro <- pro %>% inner_join(dt_pro)
+# there is one too many province (one recent split)
+pro <- pro %>%
+  group_by(ID_BC) %>%
+  summarize(geometry = st_union(geometry), nprovinces = n())
+# drop Bueng Kan (together with Nong Kai they used to be one region)
+dt_pro2 <- dt_pro[dt_pro$NAME_1 != "Bueng Kan", ]
+#
+pro <- pro %>% inner_join(dt_pro2)
+pro_cen <- st_centroid(pro)
 
-bndr$THA1$id <- seq_len(nrow(bndr$THA1))
-
-zon <- bndr$THA1 %>%
-  inner_join(dt_zn[c("NAME_1", "Zone")]) %>%
+zon <- pro %>%
   group_by(Zone) %>%
   summarize(geometry = st_union(geometry), nprovinces = n())
-class(zon) <- class(bndr$THA1)
+class(zon) <- class(pro)
 zon_cen <- st_centroid(zon)
-class(zon_cen)
 
-reg <- bndr$THA1 %>%
-    inner_join(dt_zn[c("NAME_1", "Zone")]) %>%
+reg <- pro %>%
     inner_join(dt_rg) %>%
     group_by(Region) %>%
     summarize(
@@ -60,23 +71,24 @@ reg_cen <- st_centroid(reg)
 # create map
 library(tmap)
 
-pal <-  c("#1f2732", "#fab922", "#e5f1a6", "#9ff1ef")
-lwd_bd = 0.4
+pal <-  c("#1f2732", "#eeb93c", "#e4fac2", "#bcdbf6")
+lwd_bd <- 0.36
+lwd_bd_l <- 0.22
 
-khm <- tm_shape(bndr$KHM0) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[3])
-lao <- tm_shape(bndr$LAO0) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[3])
-mmr <- tm_shape(bndr$MMR0) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[3])
-mys <- tm_shape(bndr$MYS0) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[3])
-vnm <- tm_shape(bndr$VNM0) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[3])
+khm <- tm_shape(bndr$KHM0) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[3])
+lao <- tm_shape(bndr$LAO0) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[3])
+mmr <- tm_shape(bndr$MMR0) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[3])
+mys <- tm_shape(bndr$MYS0) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[3])
+vnm <- tm_shape(bndr$VNM0) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[3])
 #
-thap <- tm_shape(bndr$THA1) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[2])
-thap_txt <- tm_shape(bndr$THA1) + tm_text("id", size = .3)
+thap <- tm_shape(pro) + tm_borders(col = pal[1], lwd = lwd_bd_l) + tm_fill(col = pal[2])
+thap_txt <- tm_shape(pro_cen) + tm_text("ID_BC", size = .3)
 #
 thaz <- tm_shape(zon) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[2])
-thaz_txt <- tm_shape(zon_cen) + tm_text("Zone", size = .5)
+thaz_txt <- tm_shape(zon_cen) + tm_text("Zone", size = .54)
 #
 thar <- tm_shape(reg) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[2])
-thar_txt <- tm_shape(reg_cen) + tm_text("Region", size = .5)
+thar_txt <- tm_shape(reg_cen) + tm_text("Region", size = .54)
 
 map1 <- thap + khm + lao + mmr + mys + vnm + tm_layout(bg.color = pal[4]) + thap_txt
 map2 <- thaz + khm + lao + mmr + mys + vnm + tm_layout(bg.color = pal[4]) + thaz_txt

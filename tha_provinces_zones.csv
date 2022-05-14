@@ -1,78 +1,78 @@
-,NAME_1,HASC_1,Zone
-1,Amnat Charoen,TH.AC,10
-2,Ang Thong,TH.AT,4
-3,Bangkok Metropolis,TH.BM,0
-4,Bueng Kan,TH.BK,8
-5,Buri Ram,TH.BR,9
-6,Chachoengsao,TH.CC,6
-7,Chai Nat,TH.CN,3
-8,Chaiyaphum,TH.CY,9
-9,Chanthaburi,TH.CT,6
-10,Chiang Mai,TH.CM,1
-11,Chiang Rai,TH.CR,1
-12,Chon Buri,TH.CB,6
-13,Chumphon,TH.CP,11
-14,Kalasin,TH.KL,7
-15,Kamphaeng Phet,TH.KP,3
-16,Kanchanaburi,TH.KN,5
-17,Khon Kaen,TH.KK,7
-18,Krabi,TH.KR,11
-19,Lampang,TH.LG,1
-20,Lamphun,TH.LN,1
-21,Loei,TH.LE,8
-22,Lop Buri,TH.LB,4
-23,Mae Hong Son,TH.MH,1
-24,Maha Sarakham,TH.MS,7
-25,Mukdahan,TH.MD,10
-26,Nakhon Nayok,TH.NN,4
-27,Nakhon Pathom,TH.NP,5
-28,Nakhon Phanom,TH.NF,8
-29,Nakhon Ratchasima,TH.NR,9
-30,Nakhon Sawan,TH.NS,3
-31,Nakhon Si Thammarat,TH.NT,11
-32,Nan,TH.NA,1
-33,Narathiwat,TH.NW,12
-34,Nong Bua Lam Phu,TH.NB,8
-35,Nong Khai,TH.NK,8
-36,Nonthaburi,TH.NO,4
-37,Pathum Thani,TH.PT,4
-38,Pattani,TH.PI,12
-39,Phangnga,TH.PG,11
-40,Phatthalung,TH.PL,12
-41,Phayao,TH.PY,1
-42,Phetchabun,TH.PH,2
-43,Phetchaburi,TH.PE,5
-44,Phichit,TH.PC,3
-45,Phitsanulok,TH.PS,2
-46,Phra Nakhon Si Ayutthaya,TH.PA,4
-47,Phrae,TH.PR,1
-48,Phuket,TH.PU,11
-49,Prachin Buri,TH.PB,6
-50,Prachuap Khiri Khan,TH.PK,5
-51,Ranong,TH.RN,11
-52,Ratchaburi,TH.RT,5
-53,Rayong,TH.RY,6
-54,Roi Et,TH.RE,7
-55,Sa Kaeo,TH.SK,6
-56,Sakon Nakhon,TH.SN,8
-57,Samut Prakan,TH.SP,6
-58,Samut Sakhon,TH.SS,5
-59,Samut Songkhram,TH.SM,5
-60,Saraburi,TH.SR,4
-61,Satun,TH.SA,12
-62,Si Sa Ket,TH.SI,10
-63,Sing Buri,TH.SB,4
-64,Songkhla,TH.SG,12
-65,Sukhothai,TH.SO,2
-66,Suphan Buri,TH.SH,5
-67,Surat Thani,TH.ST,11
-68,Surin,TH.SU,9
-69,Tak,TH.TK,2
-70,Trang,TH.TG,12
-71,Trat,TH.TT,6
-72,Ubon Ratchathani,TH.UR,10
-73,Udon Thani,TH.UN,8
-74,Uthai Thani,TH.UT,3
-75,Uttaradit,TH.UD,2
-76,Yala,TH.YL,12
-77,Yasothon,TH.YS,10
+,NAME_1,HASC_1,Zone,ID_BC,NAME_BC
+1,Amnat Charoen,TH.AC,10,1,Amnat Charoen
+2,Ang Thong,TH.AT,4,2,Ang Thong
+3,Bangkok Metropolis,TH.BM,0,4,Bangkok Metropolis
+4,Bueng Kan,TH.BK,8,35,Nong Khai
+5,Buri Ram,TH.BR,9,5,Buri Ram
+6,Chachoengsao,TH.CC,6,6,Chachoengsao
+7,Chai Nat,TH.CN,3,7,Chai Nat
+8,Chaiyaphum,TH.CY,9,8,Chaiyaphum
+9,Chanthaburi,TH.CT,6,9,Chanthaburi
+10,Chiang Mai,TH.CM,1,10,Chiang Mai
+11,Chiang Rai,TH.CR,1,11,Chiang Rai
+12,Chon Buri,TH.CB,6,12,Chon Buri
+13,Chumphon,TH.CP,11,13,Chumphon
+14,Kalasin,TH.KL,7,14,Kalasin
+15,Kamphaeng Phet,TH.KP,3,15,Kamphaeng Phet
+16,Kanchanaburi,TH.KN,5,16,Kanchanaburi
+17,Khon Kaen,TH.KK,7,17,Khon Kaen
+18,Krabi,TH.KR,11,18,Krabi
+19,Lampang,TH.LG,1,19,Lampang
+20,Lamphun,TH.LN,1,20,Lamphun
+21,Loei,TH.LE,8,21,Loei
+22,Lop Buri,TH.LB,4,22,Lop Buri
+23,Mae Hong Son,TH.MH,1,23,Mae Hong Son
+24,Maha Sarakham,TH.MS,7,24,Maha Sarakham
+25,Mukdahan,TH.MD,10,25,Mukdahan
+26,Nakhon Nayok,TH.NN,4,26,Nakhon Nayok
+27,Nakhon Pathom,TH.NP,5,27,Nakhon Pathom
+28,Nakhon Phanom,TH.NF,8,28,Nakhon Phanom
+29,Nakhon Ratchasima,TH.NR,9,29,Nakhon Ratchasima
+30,Nakhon Sawan,TH.NS,3,30,Nakhon Sawan
+31,Nakhon Si Thammarat,TH.NT,11,31,Nakhon Si Thammarat
+32,Nan,TH.NA,1,32,Nan
+33,Narathiwat,TH.NW,12,33,Narathiwat
+34,Nong Bua Lam Phu,TH.NB,8,34,Nong Bua Lam Phu
+35,Nong Khai,TH.NK,8,35,Nong Khai
+36,Nonthaburi,TH.NO,4,36,Nonthaburi
+37,Pathum Thani,TH.PT,4,37,Pathum Thani
+38,Pattani,TH.PI,12,38,Pattani
+39,Phangnga,TH.PG,11,39,Phangnga
+40,Phatthalung,TH.PL,12,40,Phatthalung
+41,Phayao,TH.PY,1,41,Phayao
+42,Phetchabun,TH.PH,2,42,Phetchabun
+43,Phetchaburi,TH.PE,5,43,Phetchaburi
+44,Phichit,TH.PC,3,44,Phichit
+45,Phitsanulok,TH.PS,2,45,Phitsanulok
+46,Phra Nakhon Si Ayutthaya,TH.PA,4,3,Ayutthaya
+47,Phrae,TH.PR,1,46,Phrae
+48,Phuket,TH.PU,11,47,Phuket
+49,Prachin Buri,TH.PB,6,48,Prachin Buri
+50,Prachuap Khiri Khan,TH.PK,5,49,Prachuap Khiri Khan
+51,Ranong,TH.RN,11,50,Ranong
+52,Ratchaburi,TH.RT,5,51,Ratchaburi
+53,Rayong,TH.RY,6,52,Rayong
+54,Roi Et,TH.RE,7,53,Roi Et
+55,Sa Kaeo,TH.SK,6,54,Sa Kaeo
+56,Sakon Nakhon,TH.SN,8,55,Sakon Nakhon
+57,Samut Prakan,TH.SP,6,56,Samut Prakan
+58,Samut Sakhon,TH.SS,5,57,Samut Sakhon
+59,Samut Songkhram,TH.SM,5,58,Samut Songkhram
+60,Saraburi,TH.SR,4,59,Saraburi
+61,Satun,TH.SA,12,60,Satun
+62,Si Sa Ket,TH.SI,10,61,Si Sa Ket
+63,Sing Buri,TH.SB,4,62,Sing Buri
+64,Songkhla,TH.SG,12,63,Songkhla
+65,Sukhothai,TH.SO,2,64,Sukhothai
+66,Suphan Buri,TH.SH,5,65,Suphan Buri
+67,Surat Thani,TH.ST,11,66,Surat Thani
+68,Surin,TH.SU,9,67,Surin
+69,Tak,TH.TK,2,68,Tak
+70,Trang,TH.TG,12,69,Trang
+71,Trat,TH.TT,6,70,Trat
+72,Ubon Ratchathani,TH.UR,10,71,Ubon Ratchathani
+73,Udon Thani,TH.UN,8,72,Udon Thani
+74,Uthai Thani,TH.UT,3,73,Uthai Thani
+75,Uttaradit,TH.UD,2,74,Uttaradit
+76,Yala,TH.YL,12,75,Yala
+77,Yasothon,TH.YS,10,76,Yasothon
