@@ -88,7 +88,7 @@ thaz <- tm_shape(zon) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = p
 thaz_txt <- tm_shape(zon_cen) + tm_text("Zone", size = .54)
 #
 thar <- tm_shape(reg) + tm_borders(col = pal[1], lwd = lwd_bd) + tm_fill(col = pal[2])
-thar_txt <- tm_shape(reg_cen) + tm_text("Region", size = .54)
+thar_txt <- tm_shape(reg_cen) + tm_text("Region", size = .51, ymod = c(.3, 0, 0, .65), xmod = c(0, 0, 0, -0.7))
 
 map1 <- thap + khm + lao + mmr + mys + vnm + tm_layout(bg.color = pal[4]) + thap_txt
 map2 <- thaz + khm + lao + mmr + mys + vnm + tm_layout(bg.color = pal[4]) + thaz_txt
@@ -100,4 +100,4 @@ tmap_save(map2, "zones.png", height = 90, width = 50, dpi = 600, units = "mm", o
 tmap_save(map3, "regions.png", height = 90, width = 50, dpi = 600, units = "mm", outer.margins = 0.01)
 
 # Use imageMagick afterwards
-# convert +append provinces.png zones.png regions.png all.png
+# convert +append regions.png zones.png provinces.png all.png
